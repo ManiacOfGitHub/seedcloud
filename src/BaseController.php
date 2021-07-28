@@ -19,7 +19,7 @@ abstract class BaseController
 
     protected function getRealIP()
     {
-        return $_SERVER["REMOTE_ADDR"];
+        return $_SERVER["HTTP_X_FORWARDED_FOR"];
     }
 
     public function process($actionName)
