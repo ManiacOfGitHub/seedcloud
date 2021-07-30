@@ -424,14 +424,14 @@ jQuery(function () {
 								changeStep(STEP_INITIAL);
 							}
 							
-                            if (currentState === 0 || currentState === 1) {
+                            if (currentState === 0) {
                                 setTimeout(checkStatusForCurrentTask, REFRESH_STATE_INTERVAL);
                             }
-							//if (currentState === 1 ) {
+							if (currentState === 1 ) {
 								//= Part1 Dumper Claimed
-								//localStorage.setItem('claimedBy', data.claimedBy)
-								//changeStep(STEP_ADD_THE_BOT);
-							//}
+								localStorage.setItem('claimedBy', data.claimedBy)
+								changeStep(STEP_ADD_THE_BOT);
+							}
 							if (currentState === 2 ) {
 								//= Part1 Dumper Done
 								changeStep(STEP_BRUTEFORCE_CHOOSE)
