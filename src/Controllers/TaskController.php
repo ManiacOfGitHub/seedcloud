@@ -23,7 +23,7 @@ class TaskController extends BaseController
             }
             $str = 'SEED' . str_repeat("\x00", 288 - 4 - 16) . $keyY;
             header('Content-Disposition: attachment; filename="movable.sed"');
-            header('Content-Type: text/plain'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient
+            header('Content-Type: application/octet-stream'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient
             header('Content-Length: 288');
             echo $str;
             exit;
@@ -53,7 +53,7 @@ class TaskController extends BaseController
             }
 
             header('Content-Disposition: attachment; filename="movable_part1.sed"');
-            header('Content-Type: text/plain'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient
+            header('Content-Type: application/octet-stream'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient
             header('Content-Length: ' . strlen($str));
             header('Connection: close');
             echo $str;
