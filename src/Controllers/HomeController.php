@@ -185,6 +185,13 @@ class HomeController extends BaseController
                     ));
                     die;
                 }
+                if (FriendCode::IsProbablyCopied($friendcode)) {
+                    echo json_encode(array(
+                        'success' => false,
+                        'message' => 'The friendcode you provided may not be for your system. Please use the friend code listed under your own mii.',
+                    ));
+                    die;
+                }
 
                 $dbCon = DatabaseManager::GetHandle();
                 $statement = $dbCon->prepare('select * from seedqueue where id0 like :id0 and friendcode like :friendcode and state > -99 order by state desc');
