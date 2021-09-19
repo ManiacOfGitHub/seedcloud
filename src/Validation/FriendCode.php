@@ -1,6 +1,6 @@
 <?php
 
-namespace SeedButt\Validation;
+namespace SeedCloud\Validation;
 
 class FriendCode
 {
