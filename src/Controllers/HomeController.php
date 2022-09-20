@@ -178,7 +178,7 @@ class HomeController extends BaseController
                     ));
                     die;
                 }
-                if (!ID0::IsExample($id0)) {
+                if (ID0::IsExample($id0)) {
                     echo json_encode(array(
                         'success' => false,
                         'message' => 'The id0 you provided is from the guide example. Please read the guide carefully and get your OWN id0.',
