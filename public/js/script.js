@@ -271,11 +271,6 @@ jQuery(function () {
 		jQuery('#unmineableModal').modal();
 	}
 	window.showUnmineableModal = showUnmineableModal;
-
-	function showvguideModal() {
-		jQuery('#vguideModal').modal();
-	}
-	window.showvguideModal = showvguideModal;
 	
     function changeStep(wantedStep) {
         jQuery('#accordion button[data-toggle="collapse"]:not([data-target="#collapseOne"])').prop('disabled', true);
