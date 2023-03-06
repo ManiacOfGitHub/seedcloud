@@ -476,7 +476,9 @@ You can <b>NOT</b> recover your digital game saves unless you have an existing h
 <script>
 jQuery(function () {
 if (document.referrer.match(/^https?:\/\/([^\/]+\.)?youtube\.com(\/|$)/i) || 
- document.referrer.match(/^https?:\/\/([^\/]+\.)?jacksorrell\.tv(\/|$)/i)) {
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?jacksorrell\.tv(\/|$)/i) || 
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?youtu\.be(\/|$)/i)) || 
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?antonretro\.com(\/|$)/i) {
   jQuery('#vguideModal').modal();
 }
 
