@@ -48,6 +48,8 @@ class Router
                 return ['MinerProfile', 'index'];
             case 'trusted':
                 return ['Trusted', 'index'];
+            case 'status':
+                return ['Status', 'index'];
             default:
                 return ['Home', 'index'];
                 break;
