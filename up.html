@@ -1,3 +1,25 @@
+{% extends "layout.html" %}
+{% block status %}
+<span>{{ userCount }} in mining queue, </span> 
+<span>{{ miningCount }} currently mining, </span> 
+<span>{{ minersStandby }} idle miners, </span> 
+<span>{{ msCount }}+~500,000 McMovables served</span> 
+{% endblock %}
+{% block content %}
+
+<main class="container">
+	<!-- look ma, i'm git pulling -->
+    <br/>
+    {% if isUp == false and false %}
+    <div class="alert alert-danger">Seedhelper seems to be having issues. You may be stuck waiting for the bot for a while until the issue is fixed! Uploading
+        an existing part1 and having it mined should be operational. You should ask for a friend on the
+        <a href="https://discord.gg/C29hYvh">Nintendo Homebrew Discord</a> and then upload the part1 here or bruteforce it yourself.</div>
+    {% endif %}
+
+	<!-- DEPRECATION WARNING
+	<div class="card-body"><div class="alert alert-danger danger-flash">
+	Please note Seedminer is currently deprecated, and should not be used under regular circumstances.<br>If you are following any guide except the one at <a href="https://3ds.hacks.guide">https://3ds.hacks.guide</a> please go there now and reassess whether you need to use Seedminer.
+	</div> -->
 	<div class="card-body"><div class="alert alert-danger">
 		<b>@ Miners running Nvidia or Intel Cards:</b> If you have setup your mining installation before the 11th of April, please update to 
 		<a href="https://github.com/zoogie/seedminer/releases/latest"  rel="noreferrer" target="_blank">this seedminer release</a> which will improve mining performance by 2-3x on Nvidia GPUs and 20% on Intel GPUs.
@@ -308,3 +330,163 @@
                 </div>
             </div>
         </div>-->
+        <div class="card">
+            <div class="card-header" id="headingY">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseY" aria-expanded="false" aria-controls="collapseY">
+                        Credits
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseY" class="collapse" aria-labelledby="headingY" data-parent="#accordion2">
+                <div class="card-body">
+                    bruteforcemovable.com is developed by DeadPhoenix, for part1 dumping it uses the service provided by RandalHoffman ~thank you very much for that~. Essentially it is just a rewrite of Seedhelper using PHP so here are the credits for Seedhelper:<br/><br/>
+
+                    Seedhelper is developed by
+                    <a href="https://github.com/figgyc" rel="noreferrer" target="_blank">figgyc</a> and is
+                    <a href="https://github.com/figgyc/seedhelper2" rel="noreferrer" target="_blank">open source</a>. Seedhelper has been possible thanks to many people:<br/>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/Pirater12" rel="noreferrer" target="_blank">@Pirater12</a> for reverse engineering frd:a and making httpc_curl to make the friend code bot
+                            possible</li>
+                        <li>
+                            <a href="https://github.com/zoogie" rel="noreferrer" target="_blank">@zoogie</a> for creating the seedminer applications and finding the vulnerability</li>
+                        <li>
+                            <a href="https://github.com/Jisagi" rel="noreferrer" target="_blank">@Jisagi</a> for creating the seedminer guide</li>
+                        <li>
+                            <a href="https://github.com/jason0597" rel="noreferrer" target="_blank">@jason0597</a>,
+                            <a href="https://github.com/knight-ryu12" rel="noreferrer" target="_blank">@knight-ryu12</a>,
+                            <a href="https://github.com/saibotu" rel="noreferrer" target="_blank">@saibotu</a>, and anyone who has used the service for testing and finding bugs!</li>
+                        <li>All Seedhelper miners</li>
+                    </ul><br/>
+					Additional BruteforceMovable Credits:
+					<ul>
+					<li>
+                            <a href="https://github.com/Mike15678" rel="noreferrer" target="_blank">@Mike15678</a> for his work on the autolauncher script and additions to seedminer and bfcl to make mining more efficient</li>
+                        </li>
+					<li>
+                            <a href="#">@RandalHoffman</a> for providing the part1dumper service</li>
+                        </li>
+					<li>
+                            All BruteforceMovable miners and everyone who helped out testing and improving the site.
+                        </li>
+					<li>
+                            eip for reimplementing and rehosting BFM after DeadPhoenix dropped out of the scene.
+                        </li>
+					<li>
+                            aspargas2, randal and crc in general for fixing various pain-in-the-ass bugs which eip couldn't fix and helping to smooth out the duct tape holding this together.
+                        </li>
+					<li>
+                            Nintendo for murdering Browserhax and making us resurrect BFM.
+                        </li>
+					</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</main>
+
+<div class="modal fade" id="vguideModal" tabindex="-1" role="dialog" aria-labelledby="vguideModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vguideModalLabel">You seem to come from a Video Guide</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	<p><b>Why you should not use video guides:</b></p>
+	<ul>
+		<li>They get outdated quickly</li>
+		<li>Tough to update and give assistance for</li>
+		<li>Can be misinformative and dangerous for the console</li>
+	</ul>
+	<p><b>Recommended Solution</b></p>
+	<p>Read a trusted written tutorial. We recommend <a href="https://3ds.hacks.guide" target="_blank">3ds.hacks.guide</a>, If you require help with any of the steps,
+		come visit us on <a href="https://discord.gg/C29hYvh" target="_blank">Discord</a> and we will help you through the process</p> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="supportModalLabel">Support the Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>BruteforceMovable is run by normal human beings that spend their free time helping other people getting access to Homebrew on their systems.</p>
+		<p>If you would like to support this project you can do this in multiple ways, no matter how small the contribution it is greatly appreciated and helps out immensely.</p>
+		<p>Of course none of this is necessary, you will still get the same level of assistance. (And it will also not grant you any special privileges.)</p>
+		<p>Here are some ways to help out:</p>
+		<ul>
+			<li>You can send us some money using our <a href="https://paypal.me/nintendohomebrew" rel="noreferrer" target="_blank">PayPal.me</a> link. It would definitely put a smile on our faces.
+			<br></li>
+			<li>Join the miners! If you ever felt like your gpu is getting bored, check out the "Mine for BruteforceMovable"-Section on the site. 
+			<sub>We got a leaderboard! Nothing is better than a little competition :) </sub>
+			</li>
+		</ul>
+		<p><sub>Even if you can't do any of the above, we also appreciate a little "thank you guys" message in the Discord.</sub></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="unmineableModal" tabindex="-1" role="dialog" aria-labelledby="unmineableModalTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="unmineableModalTitle">We were unable to successfully complete your bruteforce request. :`(</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			<p>
+			To resolve this, please first double check your id0. If there was more than one 32-character folder in your "Nintendo 3DS" folder, please be sure you followed the process to obtain the correct id0. </p>
+			<p>If you are sure your id0 was correct, you will need to format your console from <span style="color: white">System Settings > Other Settings > System Format</span> in order to use *miner methods. Once your system is formatted, you should begin the whole process again.
+Formatting your system will remove <b>all</b> of your user data, including installed <b>digital games, saves</b>, NNID details, themes and other non-system files. 
+Once you log back into your NNID, you will be able to redownload any purchases you have made, including games and themes.
+You can <b>NOT</b> recover your digital game saves unless you have an existing homebrew entry point. <sub>If you do not know what this is, you do not have one.</sub
+</p>
+<p>If formatting does not solve the issue, or if you wish to preserve your data, you can attempt an <a href="https://3ds.hacks.guide/get-started#alternate-methods" rel="noreferrer" target="_blank">alternate method</a> from the 3ds.hacks.guide site.</p>
+<p>If you require help with this information, please feel free to ask in the assistance channels on the Nintendo Homebrew Discord server.
+			</p>
+			<sub>Please note that there is no 100% guarantee that it will be mineable after the system format. While it works on most systems, there is still a possibility that you will need to resort to other methods. There is no need for multiple formats, if a format will solve it, it will be solved by a single format.</sub>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div> 
+	</div>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+<script>
+jQuery(function () {
+if (document.referrer.match(/^https?:\/\/([^\/]+\.)?youtube\.com(\/|$)/i) || 
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?jacksorrell\.tv(\/|$)/i) || 
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?youtu\.be(\/|$)/i) || 
+ document.referrer.match(/^https?:\/\/([^\/]+\.)?antonretro\.com(\/|$)/i)) {
+  jQuery('#vguideModal').modal();
+}
+
+});
+</script>
+{% endblock %}
