@@ -6,7 +6,7 @@ use SeedCloud\BadgeManager;
 
 class ManualMiningPTSDBadge extends BaseBadge
 {
-    public $description = 'Awarded for beeing active in the manual mining days.';
+    public $description = 'Awarded for being active in the manual mining days.';
     public $title = 'Manual Mining PTSD';
 
     protected function registerEventListeners()

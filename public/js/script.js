@@ -631,4 +631,19 @@ jQuery(function () {
         processMovablePart1();
         e.preventDefault();
     });
+    var searchParams = new URLSearchParams(location.search);
+    if(searchParams.has("nowarning")) {
+        localStorage.setItem("dismissedWarning","true");
+    } else if(localStorage.getItem("dismissedWarning") != "true") {
+        jQuery("#outdatedModal").modal({keyboard: false, backdrop: 'static'});
+        let closeWarning = jQuery('#closeWarning');
+        setTimeout(function(){
+            closeWarning.css({"opacity":"1"});
+            closeWarning.removeAttr("disabled");
+            closeWarning.tooltip({title:"Only continue if you know what you're doing!"});
+            closeWarning.click(function(){
+                localStorage.setItem("dismissedWarning","true");
+            });
+        },30000);
+    }
 });

@@ -388,28 +388,26 @@
     
 </main>
 
-<div class="modal fade" id="vguideModal" tabindex="-1" role="dialog" aria-labelledby="vguideModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="outdatedModal" tabindex="-1" role="dialog" aria-labelledby="outdatedModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="vguideModalLabel">You seem to come from a Video Guide</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="outdatedModalLabel">Outdated Guide</h5>
       </div>
       <div class="modal-body">
-	<p><b>Why you should not use video guides:</b></p>
-	<ul>
-		<li>They get outdated quickly</li>
-		<li>Tough to update and give assistance for</li>
-		<li>Can be misinformative and dangerous for the console</li>
-	</ul>
-	<p><b>Recommended Solution</b></p>
-	<p>Read a trusted written tutorial. We recommend <a href="https://3ds.hacks.guide" target="_blank">3ds.hacks.guide</a>, If you require help with any of the steps,
-		come visit us on <a href="https://discord.gg/C29hYvh" target="_blank">Discord</a> and we will help you through the process</p> 
+	<p><b>The guide that linked you to this page is likely outdated.</b></p>
+    <p>
+        Are you currently attempting to mod your console? <b><u>STOP!</u></b><br>
+        You should <b>only</b> be following the official written guide: <a href="https://3ds.hacks.guide/">3ds.hacks.guide</a>.
+    </p>
+    <p>
+        If you are using this for some other reason (i.e. data recovery), you should check with the Discord server linked below before continuing.<br>
+        You should only continue if you know <b>exactly</b> what you are doing. In that case, you can close this popup after 30 seconds.
+    </p>
+    <p>Have any questions? Join the <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew Discord server</a> and ask in #3ds-assistance-1.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id="closeWarning" data-placement="top" data-dismiss="modal" style="opacity:0;transition: opacity 1s;" disabled>Close</button>
       </div>
     </div>
   </div>
@@ -461,7 +459,7 @@
 			<p>If you are sure your id0 was correct, you will need to format your console from <span style="color: white">System Settings > Other Settings > System Format</span> in order to use *miner methods. Once your system is formatted, you should begin the whole process again.
 Formatting your system will remove <b>all</b> of your user data, including installed <b>digital games, saves</b>, NNID details, themes and other non-system files. 
 Once you log back into your NNID, you will be able to redownload any purchases you have made, including games and themes.
-You can <b>NOT</b> recover your digital game saves unless you have an existing homebrew entry point. <sub>If you do not know what this is, you do not have one.</sub
+You can <b>NOT</b> recover your digital game saves unless you have an existing homebrew entry point. <sub>If you do not know what this is, you do not have one.</sub>
 </p>
 <p>If formatting does not solve the issue, or if you wish to preserve your data, you can attempt an <a href="https://3ds.hacks.guide/get-started#alternate-methods" rel="noreferrer" target="_blank">alternate method</a> from the 3ds.hacks.guide site.</p>
 <p>If you require help with this information, please feel free to ask in the assistance channels on the Nintendo Homebrew Discord server.
@@ -478,15 +476,4 @@ You can <b>NOT</b> recover your digital game saves unless you have an existing h
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
-<script>
-jQuery(function () {
-if (document.referrer.match(/^https?:\/\/([^\/]+\.)?youtube\.com(\/|$)/i) || 
- document.referrer.match(/^https?:\/\/([^\/]+\.)?jacksorrell\.tv(\/|$)/i) || 
- document.referrer.match(/^https?:\/\/([^\/]+\.)?youtu\.be(\/|$)/i) || 
- document.referrer.match(/^https?:\/\/([^\/]+\.)?antonretro\.com(\/|$)/i)) {
-  jQuery('#vguideModal').modal();
-}
-
-});
-</script>
 {% endblock %}
