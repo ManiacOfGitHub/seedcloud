@@ -644,6 +644,6 @@ jQuery(function () {
             closeWarning.click(function(){
                 localStorage.setItem("dismissedWarning","true");
             });
-        },30000);
+        },10000);
     }
 });
